@@ -1,0 +1,297 @@
+﻿namespace winShootForItAuctions.Layers.UI
+{
+    partial class frmSubastasActivas
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblMisSubastas = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.cboCategoriaBien = new System.Windows.Forms.ComboBox();
+            this.dgvSubastas = new System.Windows.Forms.DataGridView();
+            this.clmCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmBien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmIncrementoMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFechaHoraInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFechaHoraCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPrecioBase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPrecioVentaDirecta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblSubastas = new System.Windows.Forms.Label();
+            this.btnParticipar = new System.Windows.Forms.Button();
+            this.ptbFoto = new System.Windows.Forms.PictureBox();
+            this.lblFotografía = new System.Windows.Forms.Label();
+            this.tmrRefrescar = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubastas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbFoto)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.91738F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.88578F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.196841F));
+            this.tableLayoutPanel1.Controls.Add(this.lblMisSubastas, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblCategoria, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cboCategoriaBien, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dgvSubastas, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblSubastas, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnParticipar, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ptbFoto, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lblFotografía, 1, 5);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.984521F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.33081F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.924079F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.77593F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.31777F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.150632F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.94169F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1646, 1029);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // lblMisSubastas
+            // 
+            this.lblMisSubastas.AutoSize = true;
+            this.lblMisSubastas.BackColor = System.Drawing.Color.Transparent;
+            this.lblMisSubastas.Font = new System.Drawing.Font("Century Gothic", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMisSubastas.ForeColor = System.Drawing.Color.White;
+            this.lblMisSubastas.Location = new System.Drawing.Point(3, 0);
+            this.lblMisSubastas.Name = "lblMisSubastas";
+            this.lblMisSubastas.Size = new System.Drawing.Size(209, 30);
+            this.lblMisSubastas.TabIndex = 2;
+            this.lblMisSubastas.Text = "Subastas Activas";
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.lblCategoria.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.White;
+            this.lblCategoria.Location = new System.Drawing.Point(140, 61);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(119, 23);
+            this.lblCategoria.TabIndex = 4;
+            this.lblCategoria.Text = "CATEGORÍA";
+            // 
+            // cboCategoriaBien
+            // 
+            this.cboCategoriaBien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.cboCategoriaBien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategoriaBien.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboCategoriaBien.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategoriaBien.ForeColor = System.Drawing.Color.White;
+            this.cboCategoriaBien.FormattingEnabled = true;
+            this.cboCategoriaBien.Location = new System.Drawing.Point(265, 64);
+            this.cboCategoriaBien.Name = "cboCategoriaBien";
+            this.cboCategoriaBien.Size = new System.Drawing.Size(199, 31);
+            this.cboCategoriaBien.TabIndex = 68;
+            this.cboCategoriaBien.SelectedIndexChanged += new System.EventHandler(this.cboCategoriaBien_SelectedIndexChanged);
+            // 
+            // dgvSubastas
+            // 
+            this.dgvSubastas.AllowUserToAddRows = false;
+            this.dgvSubastas.AllowUserToDeleteRows = false;
+            this.dgvSubastas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSubastas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvSubastas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSubastas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmCodigo,
+            this.clmBien,
+            this.clmIncrementoMinimo,
+            this.clmFechaHoraInicio,
+            this.clmFechaHoraCierre,
+            this.clmPrecioBase,
+            this.clmPrecioVentaDirecta});
+            this.dgvSubastas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSubastas.Location = new System.Drawing.Point(265, 209);
+            this.dgvSubastas.MultiSelect = false;
+            this.dgvSubastas.Name = "dgvSubastas";
+            this.dgvSubastas.ReadOnly = true;
+            this.dgvSubastas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSubastas.Size = new System.Drawing.Size(1275, 309);
+            this.dgvSubastas.TabIndex = 79;
+            this.dgvSubastas.SelectionChanged += new System.EventHandler(this.dgvSubastas_SelectionChanged);
+            // 
+            // clmCodigo
+            // 
+            this.clmCodigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.clmCodigo.HeaderText = "Código";
+            this.clmCodigo.Name = "clmCodigo";
+            this.clmCodigo.ReadOnly = true;
+            this.clmCodigo.Width = 89;
+            // 
+            // clmBien
+            // 
+            this.clmBien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.clmBien.HeaderText = "Bien";
+            this.clmBien.Name = "clmBien";
+            this.clmBien.ReadOnly = true;
+            this.clmBien.Width = 65;
+            // 
+            // clmIncrementoMinimo
+            // 
+            this.clmIncrementoMinimo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmIncrementoMinimo.HeaderText = "Incremento Mímino ($)";
+            this.clmIncrementoMinimo.Name = "clmIncrementoMinimo";
+            this.clmIncrementoMinimo.ReadOnly = true;
+            // 
+            // clmFechaHoraInicio
+            // 
+            this.clmFechaHoraInicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.clmFechaHoraInicio.HeaderText = "Fecha / Hora Inicio";
+            this.clmFechaHoraInicio.Name = "clmFechaHoraInicio";
+            this.clmFechaHoraInicio.ReadOnly = true;
+            this.clmFechaHoraInicio.Width = 87;
+            // 
+            // clmFechaHoraCierre
+            // 
+            this.clmFechaHoraCierre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.clmFechaHoraCierre.HeaderText = "Fecha / Hora Cierre";
+            this.clmFechaHoraCierre.Name = "clmFechaHoraCierre";
+            this.clmFechaHoraCierre.ReadOnly = true;
+            this.clmFechaHoraCierre.Width = 87;
+            // 
+            // clmPrecioBase
+            // 
+            this.clmPrecioBase.HeaderText = "Precio Base";
+            this.clmPrecioBase.Name = "clmPrecioBase";
+            this.clmPrecioBase.ReadOnly = true;
+            // 
+            // clmPrecioVentaDirecta
+            // 
+            this.clmPrecioVentaDirecta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmPrecioVentaDirecta.HeaderText = "Venta Directa ($)";
+            this.clmPrecioVentaDirecta.Name = "clmPrecioVentaDirecta";
+            this.clmPrecioVentaDirecta.ReadOnly = true;
+            // 
+            // lblSubastas
+            // 
+            this.lblSubastas.AutoSize = true;
+            this.lblSubastas.BackColor = System.Drawing.Color.Transparent;
+            this.lblSubastas.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubastas.ForeColor = System.Drawing.Color.White;
+            this.lblSubastas.Location = new System.Drawing.Point(265, 177);
+            this.lblSubastas.Name = "lblSubastas";
+            this.lblSubastas.Size = new System.Drawing.Size(100, 23);
+            this.lblSubastas.TabIndex = 80;
+            this.lblSubastas.Text = "SUBASTAS";
+            // 
+            // btnParticipar
+            // 
+            this.btnParticipar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnParticipar.BackColor = System.Drawing.Color.Black;
+            this.btnParticipar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnParticipar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnParticipar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnParticipar.ForeColor = System.Drawing.Color.White;
+            this.btnParticipar.Location = new System.Drawing.Point(1401, 524);
+            this.btnParticipar.Name = "btnParticipar";
+            this.btnParticipar.Size = new System.Drawing.Size(139, 32);
+            this.btnParticipar.TabIndex = 81;
+            this.btnParticipar.Text = "PARTICIPAR";
+            this.btnParticipar.UseVisualStyleBackColor = false;
+            this.btnParticipar.Click += new System.EventHandler(this.btnParticipar_Click);
+            // 
+            // ptbFoto
+            // 
+            this.ptbFoto.Image = global::winShootForItAuctions.Properties.Resources.imagen_icon;
+            this.ptbFoto.Location = new System.Drawing.Point(265, 620);
+            this.ptbFoto.Name = "ptbFoto";
+            this.ptbFoto.Size = new System.Drawing.Size(553, 284);
+            this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ptbFoto.TabIndex = 82;
+            this.ptbFoto.TabStop = false;
+            // 
+            // lblFotografía
+            // 
+            this.lblFotografía.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblFotografía.AutoSize = true;
+            this.lblFotografía.BackColor = System.Drawing.Color.Transparent;
+            this.lblFotografía.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFotografía.ForeColor = System.Drawing.Color.White;
+            this.lblFotografía.Location = new System.Drawing.Point(265, 594);
+            this.lblFotografía.Name = "lblFotografía";
+            this.lblFotografía.Size = new System.Drawing.Size(128, 23);
+            this.lblFotografía.TabIndex = 83;
+            this.lblFotografía.Text = "FOTOGRAFÍA";
+            // 
+            // tmrRefrescar
+            // 
+            this.tmrRefrescar.Interval = 8000;
+            this.tmrRefrescar.Tick += new System.EventHandler(this.tmrRefrescar_Tick);
+            // 
+            // frmSubastasActivas
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::winShootForItAuctions.Properties.Resources.fondo_windows_4_borroso;
+            this.ClientSize = new System.Drawing.Size(1646, 1029);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmSubastasActivas";
+            this.ShowIcon = false;
+            this.Text = "frmSubastasActivas";
+            this.Load += new System.EventHandler(this.frmSubastasActivas_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubastas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbFoto)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblMisSubastas;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.ComboBox cboCategoriaBien;
+        private System.Windows.Forms.DataGridView dgvSubastas;
+        private System.Windows.Forms.Label lblSubastas;
+        private System.Windows.Forms.Button btnParticipar;
+        private System.Windows.Forms.PictureBox ptbFoto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmBien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmIncrementoMinimo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaHoraInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaHoraCierre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrecioBase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrecioVentaDirecta;
+        private System.Windows.Forms.Timer tmrRefrescar;
+        private System.Windows.Forms.Label lblFotografía;
+    }
+}

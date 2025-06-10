@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{309CE87A-C03A-472C-BA0B-DFC4E174E2D4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>winShootForItAuctions</RootNamespace>
+    <AssemblyName>winShootForItAuctions</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.17.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.17\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagingToolkit.QRCode, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MessagingToolkit.QRCode.1.3.0\lib\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="QuestPDF, Version=2024.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\QuestPDF.2024.7.2\lib\netstandard2.0\QuestPDF.dll</HintPath>
+    </Reference>
+    <Reference Include="ReaLTaiizor, Version=3.8.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ReaLTaiizor.3.8.0.6\lib\net48\ReaLTaiizor.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=111.4.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.111.4.0\lib\net48\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.8.0.4\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\WebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\EBancos.cs" />
+    <Compile Include="Enums\ETipoEstadoBien.cs" />
+    <Compile Include="Enums\ETipoEstadoCliente.cs" />
+    <Compile Include="Enums\ETipoEstadoFactura.cs" />
+    <Compile Include="Enums\ETipoEstadoSubasta.cs" />
+    <Compile Include="Enums\ETipoMetodoPago.cs" />
+    <Compile Include="Enums\ETipoUsuario.cs" />
+    <Compile Include="Extensions\ExceptionsExtention.cs" />
+    <Compile Include="Interfaces\IBLLBien.cs" />
+    <Compile Include="Interfaces\IBLLCategoriaBien.cs" />
+    <Compile Include="Interfaces\IBLLFactura.cs" />
+    <Compile Include="Interfaces\IBLLParametro.cs" />
+    <Compile Include="Interfaces\IBLLPuja.cs" />
+    <Compile Include="Interfaces\IBLLSubasta.cs" />
+    <Compile Include="Interfaces\IBLLUsuario.cs" />
+    <Compile Include="Interfaces\IDALBien.cs" />
+    <Compile Include="Interfaces\IDALFactura.cs" />
+    <Compile Include="Interfaces\IDALFotografia.cs" />
+    <Compile Include="Interfaces\IDALParametro.cs" />
+    <Compile Include="Interfaces\IDALPuja.cs" />
+    <Compile Include="Interfaces\IDALSubasta.cs" />
+    <Compile Include="Interfaces\IDALUsuario.cs" />
+    <Compile Include="Layers\BLL\BLLBien.cs" />
+    <Compile Include="Layers\BLL\BLLCategoriaBien.cs" />
+    <Compile Include="Layers\BLL\BLLFactura.cs" />
+    <Compile Include="Layers\BLL\BLLParametro.cs" />
+    <Compile Include="Layers\BLL\BLLPuja.cs" />
+    <Compile Include="Layers\BLL\BLLSubasta.cs" />
+    <Compile Include="Layers\BLL\BLLUsuario.cs" />
+    <Compile Include="Layers\DAL\DALBien.cs" />
+    <Compile Include="Layers\DAL\DALCategoriaBien.cs" />
+    <Compile Include="Layers\DAL\DALFactura.cs" />
+    <Compile Include="Layers\DAL\DALFotografia.cs" />
+    <Compile Include="Layers\DAL\DALParametro.cs" />
+    <Compile Include="Layers\DAL\DALPuja.cs" />
+    <Compile Include="Layers\DAL\DALSubasta.cs" />
+    <Compile Include="Layers\DAL\DALUsuario.cs" />
+    <Compile Include="Interfaces\IDALCategoriaBien.cs" />
+    <Compile Include="Layers\ENTITIES\Bien.cs" />
+    <Compile Include="Layers\ENTITIES\DESIGN PATTERNS\FacturaFactory.cs" />
+    <Compile Include="Layers\ENTITIES\DESIGN PATTERNS\UsuarioLogeado.cs" />
+    <Compile Include="Layers\ENTITIES\DESIGN PATTERNS\SubastaFactory.cs" />
+    <Compile Include="Layers\ENTITIES\Factura.cs" />
+    <Compile Include="Layers\ENTITIES\Fotografia.cs" />
+    <Compile Include="Layers\ENTITIES\Puja.cs" />
+    <Compile Include="Layers\ENTITIES\Subasta.cs" />
+    <Compile Include="Layers\ENTITIES\DESIGN PATTERNS\SubastaFacade.cs" />
+    <Compile Include="Layers\ENTITIES\TipoBien.cs" />
+    <Compile Include="Layers\ENTITIES\Usuario.cs" />
+    <Compile Include="Layers\PERSISTENCE\DataBase.cs" />
+    <Compile Include="Layers\PERSISTENCE\FactoryConexion.cs" />
+    <Compile Include="Layers\PERSISTENCE\FactoryDataBase.cs" />
+    <Compile Include="Layers\PERSISTENCE\IDataBase.cs" />
+    <Compile Include="Layers\UI\Mantenimientos\frmImpuestosComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\frmImpuestosComision.Designer.cs">
+      <DependentUpon>frmImpuestosComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Users\frmActualizarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Users\frmActualizarUsuario.Designer.cs">
+      <DependentUpon>frmActualizarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Bienes\frmBienesDisponibles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Bienes\frmBienesDisponibles.Designer.cs">
+      <DependentUpon>frmBienesDisponibles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmFondo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmFondo.Designer.cs">
+      <DependentUpon>frmFondo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Facturacion\frmCancelarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Facturacion\frmCancelarFactura.Designer.cs">
+      <DependentUpon>frmCancelarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Facturacion\frmFacturasPendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Facturacion\frmFacturasPendientes.Designer.cs">
+      <DependentUpon>frmFacturasPendientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Users\frmListaParaActualizarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Users\frmListaParaActualizarUsuario.Designer.cs">
+      <DependentUpon>frmListaParaActualizarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Subastas\frmMisSubastas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Subastas\frmMisSubastas.Designer.cs">
+      <DependentUpon>frmMisSubastas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Subastas\frmParticipandoSubasta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Subastas\frmParticipandoSubasta.Designer.cs">
+      <DependentUpon>frmParticipandoSubasta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteBien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteBien.Designer.cs">
+      <DependentUpon>frmReporteBien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteFacturacion.Designer.cs">
+      <DependentUpon>frmReporteFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteSubastas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteSubastas.Designer.cs">
+      <DependentUpon>frmReporteSubastas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Seguridad\frmCambiarContrasenna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Seguridad\frmCambiarContrasenna.Designer.cs">
+      <DependentUpon>frmCambiarContrasenna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Seguridad\frmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Seguridad\frmLogIn.Designer.cs">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Bienes\frmModificarBien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Bienes\frmModificarBien.Designer.cs">
+      <DependentUpon>frmModificarBien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Subastas\frmNuevaSubasta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Subastas\frmNuevaSubasta.Designer.cs">
+      <DependentUpon>frmNuevaSubasta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Bienes\frmRegistrarCategoriaBien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Bienes\frmRegistrarCategoriaBien.Designer.cs">
+      <DependentUpon>frmRegistrarCategoriaBien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Bienes\frmRegistrarNuevoBien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Bienes\frmRegistrarNuevoBien.Designer.cs">
+      <DependentUpon>frmRegistrarNuevoBien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Users\frmRegistrarNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Users\frmRegistrarNuevoUsuario.Designer.cs">
+      <DependentUpon>frmRegistrarNuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Seguridad\frmRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Seguridad\frmRegistro.Designer.cs">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Users\frmSolicitudRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimientos\Users\frmSolicitudRegistro.Designer.cs">
+      <DependentUpon>frmSolicitudRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Subastas\frmSubastasActivas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\Subastas\frmSubastasActivas.Designer.cs">
+      <DependentUpon>frmSubastasActivas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Util\ApiReader.cs" />
+    <Compile Include="Util\Canton.cs" />
+    <Compile Include="Util\Distrito.cs" />
+    <Compile Include="Util\MensajeCorreo.cs" />
+    <Compile Include="Util\Nacionalidad.cs" />
+    <Compile Include="Util\QuickResponse.cs" />
+    <Compile Include="Util\Utilitarios.cs" />
+    <Compile Include="Util\MDIProperties.cs" />
+    <Compile Include="Util\Provincia.cs" />
+    <Compile Include="Util\UsuarioApi.cs" />
+    <Compile Include="Web References\cr.fi.bccr.gee.cambiodolar\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Layers\UI\Mantenimientos\frmImpuestosComision.resx">
+      <DependentUpon>frmImpuestosComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimientos\Users\frmActualizarUsuario.resx">
+      <DependentUpon>frmActualizarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimientos\Bienes\frmBienesDisponibles.resx">
+      <DependentUpon>frmBienesDisponibles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmFondo.resx">
+      <DependentUpon>frmFondo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Procesos\Facturacion\frmCancelarFactura.resx">
+      <DependentUpon>frmCancelarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Procesos\Facturacion\frmFacturasPendientes.resx">
+      <DependentUpon>frmFacturasPendientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimientos\Users\frmListaParaActualizarUsuario.resx">
+      <DependentUpon>frmListaParaActualizarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Procesos\Subastas\frmMisSubastas.resx">
+      <DependentUpon>frmMisSubastas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Procesos\Subastas\frmParticipandoSubasta.resx">
+      <DependentUpon>frmParticipandoSubasta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Reportes\frmReporteBien.resx">
+      <DependentUpon>frmReporteBien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Reportes\frmReporteFacturacion.resx">
+      <DependentUpon>frmReporteFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Reportes\frmReporteSubastas.resx">
+      <DependentUpon>frmReporteSubastas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Reportes\repBienByTipo.rdlc" />
+    <EmbeddedResource Include="Layers\UI\Reportes\repFacturaByFecha.rdlc" />
+    <EmbeddedResource Include="Layers\UI\Reportes\repSubastasByBien.rdlc" />
+    <EmbeddedResource Include="Layers\UI\Seguridad\frmCambiarContrasenna.resx">
+      <DependentUpon>frmCambiarContrasenna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Seguridad\frmLogIn.resx">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimientos\Bienes\frmModificarBien.resx">
+      <DependentUpon>frmModificarBien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Procesos\Subastas\frmNuevaSubasta.resx">
+      <DependentUpon>frmNuevaSubasta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimientos\Bienes\frmRegistrarCategoriaBien.resx">
+      <DependentUpon>frmRegistrarCategoriaBien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimientos\Bienes\frmRegistrarNuevoBien.resx">
+      <DependentUpon>frmRegistrarNuevoBien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimientos\Users\frmRegistrarNuevoUsuario.resx">
+      <DependentUpon>frmRegistrarNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Seguridad\frmRegistro.resx">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimientos\Users\frmSolicitudRegistro.resx">
+      <DependentUpon>frmSolicitudRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Procesos\Subastas\frmSubastasActivas.resx">
+      <DependentUpon>frmSubastasActivas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Connected Services\WebService\wsindicadoreseconomicos.wsdl" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\winShootForItAuctions.Layers.BLL.BLLFactura.datasource" />
+    <None Include="Properties\DataSources\winShootForItAuctions.Layers.ENTITIES.Bien.datasource" />
+    <None Include="Properties\DataSources\winShootForItAuctions.Layers.ENTITIES.Factura.datasource" />
+    <None Include="Properties\DataSources\winShootForItAuctions.Layers.ENTITIES.Subasta.datasource" />
+    <None Include="Properties\DataSources\winShootForItAuctions.Layers.ENTITIES.Usuario.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\cr.fi.bccr.gee.cambiodolar\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\cr.fi.bccr.gee.cambiodolar\wsindicadoreseconomicos.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bienes icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Subasta Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturacion icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rerportes icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuracion icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SHOOT FOR IT AUCTIONS HD.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\SHOOT_FOR_IT_AUCTIONS_ICON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixelcut-export %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SHOOT FOR IT AUCTIONS HD doblada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SHOOT_FOR_IT_AUCTIONS_ICON-transformed %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SHOOT FOR IT AUCTIONS ICON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo blanco hd.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo blanco hdhd.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mostrar contrasenna icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ocultar contrasenna icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo blanco hdhd1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SHOOT FOR IT AUCTIONS ICON1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo windows 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo windows 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contrasenna icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WebService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebService\wsindicadoreseconomicos.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://gee.bccr.fi.cr/Indicadores/Suscripciones/WS/wsindicadoreseconomicos.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\cr.fi.bccr.gee.cambiodolar\</RelPath>
+      <UpdateFromURL>https://gee.bccr.fi.cr/Indicadores/Suscripciones/WS/wsindicadoreseconomicos.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>winShootForItAuctions_cr_fi_bccr_gee_cambiodolar_wsindicadoreseconomicos</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\cr.fi.bccr.gee.cambiodolar\wsindicadoreseconomicos.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo windows borroso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo windows 3 borroso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo windows 2 borroso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo windows 4 borroso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\QuestPDF.2024.7.2\build\net4\QuestPDF.targets" Condition="Exists('packages\QuestPDF.2024.7.2\build\net4\QuestPDF.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\QuestPDF.2024.7.2\build\net4\QuestPDF.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\QuestPDF.2024.7.2\build\net4\QuestPDF.targets'))" />
+  </Target>
+</Project>
